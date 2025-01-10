@@ -33,6 +33,8 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->importShortClasses();
     $rectorConfig->removeUnusedImports();
 
+    $rectorConfig->rule(Rector\Php84\Rector\Param\ExplicitNullableParamTypeRector::class);
+
     $rectorConfig->sets([
         LevelSetList::UP_TO_PHP_82,
         SetList::CODE_QUALITY,
